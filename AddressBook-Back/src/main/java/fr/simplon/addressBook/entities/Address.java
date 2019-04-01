@@ -19,8 +19,11 @@ public class Address extends AbstractEntity {
     @Column(length = 10, nullable = false)
     private String zipCode;
 
-    protected Address() {
-	super();
+    public Address(String city, String zipCode) {
+    	super();
+    	this.zipCode = zipCode;
+    	this.cityName = city;
+	
     }
 
     
