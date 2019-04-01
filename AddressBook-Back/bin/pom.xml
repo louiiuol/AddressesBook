@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fr.simplon</groupId>
-	<artifactId>adressBook</artifactId>
+	<artifactId>addressBook</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>adressBook</name>
+	<name>addressBook</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
