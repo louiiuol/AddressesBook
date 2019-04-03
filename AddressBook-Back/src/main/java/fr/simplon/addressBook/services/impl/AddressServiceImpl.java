@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import fr.simplon.addressBook.entities.Address;
@@ -19,7 +20,8 @@ public class AddressServiceImpl implements AddressService {
 
     private final AddressJpaRepository repoAddress;
 
-    public String url = "C:/Users/Administrateur/Downloads/poste.csv";
+    @Value("${file.csv}")
+    public String url;
 
     public AddressServiceImpl(AddressJpaRepository repoAddress) {
 	this.repoAddress = repoAddress;
@@ -37,16 +39,23 @@ public class AddressServiceImpl implements AddressService {
 		String zipCode = null;
 		String cityName = null;
 		for (int i = 0; i < values.length; i++) {
-		    if (i == 1) {
-			cityName = values[i];
-		    } else if (i == 2) {
-			zipCode = values[i];
-		    } else if ((i != 1 || i != 2) && i > 0) {
-			address.add(new Address(cityName, zipCode));
+		    	if (values[i] == "Nom_commune") {
+					continue;
+				}
+		    	else {
+		    		if (i == 1) {
+		    			cityName = values[i];}
+		    		else if (i == 2) {
+		    			zipCode = values[i];
+		    		} else { 	
+		    			if (i == 3) {
+		    				address.add(new Address(cityName, zipCode));
+		    			}
+		    		}
+			
 		    }
 		}
-		System.out.println();
-	    }
+		}
 	} catch (FileNotFoundException e) {
 	    System.out.println("ya un pb");
 	} catch (IOException e) {
