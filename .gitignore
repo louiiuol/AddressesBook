@@ -10,10 +10,6 @@ HELP.md
 ./AddressBook-Back/.settings/
 ./AddressBook-Back/.springBeans
 ./AddressBook-Back/.sts4-cache
-./AddressBook-Back/target/
-./AddressBook-Back/src/main/resources/application.yml
-./AddressBook-Back/bin/
-./AddressBook-Back/.mvn/
 ./AddressBook-Back/mvnw
 ./AddressBook-Back/target/
 ./AddressBook-Back/src/main/resources/application.yml
