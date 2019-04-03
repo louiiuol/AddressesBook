@@ -1,0 +1,33 @@
+HELP.md
+./AddressBook-Back/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+./AddressBook-Back/.apt_generated
+./AddressBook-Back/.classpath
+./AddressBook-Back/.factorypath
+./AddressBook-Back/.project
+./AddressBook-Back/.settings
+./AddressBook-Back/.springBeans
+./AddressBook-Back/.sts4-cache
+
+### IntelliJ IDEA ###
+./AddressBook-Back/.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+### VS Code ###
+.vscode/
+
+### GENERAL ### 
+.DS_STORE
+./AddressBook-Back/
