@@ -15,7 +15,7 @@ target/
 resources/
 bin/
 .mvn/
-.mvnw.cmd
+mvnw.cmd
 
 ### IntelliJ IDEA ###
 .idea
