@@ -7,9 +7,19 @@ HELP.md
 ./AddressBook-Back/.classpath
 ./AddressBook-Back/.factorypath
 ./AddressBook-Back/.project
-./AddressBook-Back/.settings
+./AddressBook-Back/.settings/
 ./AddressBook-Back/.springBeans
 ./AddressBook-Back/.sts4-cache
+./AddressBook-Back/target/
+./AddressBook-Back/src/main/resources/application.yml
+./AddressBook-Back/bin/
+./AddressBook-Back/.mvn/
+./AddressBook-Back/mvnw
+./AddressBook-Back/target/
+./AddressBook-Back/src/main/resources/application.yml
+./AddressBook-Back/bin/
+./AddressBook-Back/.mvn/
+./AddressBook-Back/.mvnw.cmd
 
 ### IntelliJ IDEA ###
 ./AddressBook-Back/.idea
@@ -30,5 +40,3 @@ HELP.md
 
 ### GENERAL ### 
 .DS_STORE
-./AddressBook-Back/target/
-./AddressBook-Back/src/main/resources/application.yml
