@@ -1,5 +1,5 @@
 HELP.md
-./AddressBook-Back/target/
+
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -30,4 +30,4 @@ HELP.md
 
 ### GENERAL ### 
 .DS_STORE
-./AddressBook-Back/
+
