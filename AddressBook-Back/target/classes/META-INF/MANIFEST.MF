@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: addressBook
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Administrateur
+Implementation-Vendor-Id: fr.simplon
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/addressBook
+Created-By: Maven Integration for Eclipse
+
