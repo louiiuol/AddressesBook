@@ -29,32 +29,26 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public List<Address> parse() {
-	List<List<String>> records = new ArrayList<>();
 	List<Address> address = new ArrayList<>();
 	try (BufferedReader br = new BufferedReader(new FileReader(url))) {
 	    String line;
 	    while ((line = br.readLine()) != null) {
 		String[] values = line.split(";");
-		records.add(Arrays.asList(values));
 		String zipCode = null;
 		String cityName = null;
 		for (int i = 0; i < values.length; i++) {
-		    	if (values[i] == "Nom_commune") {
-					continue;
-				}
-		    	else {
-		    		if (i == 1) {
-		    			cityName = values[i];}
-		    		else if (i == 2) {
-		    			zipCode = values[i];
-		    		} else { 	
-		    			if (i == 3) {
-		    				address.add(new Address(cityName, zipCode));
-		    			}
-		    		}
-			
+			if (i == 1) {
+			    if (values[i].equals("Nom_commune")) {
+				break;}
+			    cityName = values[i];
+			} else if (i == 2) {
+			    zipCode = values[i];
+			} else {
+			    if (i == 3) {
+				address.add(new Address(cityName, zipCode));
+			    }
+			}
 		    }
-		}
 		}
 	} catch (FileNotFoundException e) {
 	    System.out.println("ya un pb");
@@ -67,14 +61,8 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public void loading() {
+	System.out.println(parse());
 	
-	if(repoAddress.count() == 0 ) {
-	    repoAddress.saveAll(parse());
-	} else {
-	    repoAddress.removeAll();
-	    repoAddress.saveAll(parse());
-	}
-	
+	repoAddress.saveAll(parse());
     }
-
 }

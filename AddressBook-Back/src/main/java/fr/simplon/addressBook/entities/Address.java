@@ -27,6 +27,12 @@ public class Address extends AbstractEntity {
     }
 
     
+    @Override
+    public String toString() {
+	return "Address [cityName=" + cityName + ", zipCode=" + zipCode + "]";
+    }
+
+
     public String getCityName() {
         return cityName;
     }
