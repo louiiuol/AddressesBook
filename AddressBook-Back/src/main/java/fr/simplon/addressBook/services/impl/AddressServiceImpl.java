@@ -62,8 +62,7 @@ public class AddressServiceImpl implements AddressService {
 	if(repoAddress.count() == 0 ) {
 	    repoAddress.saveAll(parse());
 	} else {
-	   // repoAddress.removeAll();
-	    repoAddress.deleteAll();
+	    repoAddress.removeAll();
 	    repoAddress.saveAll(parse());
 	}
 	
