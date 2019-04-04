@@ -2,10 +2,14 @@ const loader = document.getElementById('loader');
 const notif = document.getElementById('notif');
 const url = "http://localhost:8082/AddressBook/loading/";
 
-const loadingSpinner = document.createElement("i");
+let loadingSpinner = document.createElement("i");
 loadingSpinner.classList.add("fas", "fa-spinner", "fa-pulse");
-const successMsg = "Les addresses ont bien été chargé depuis le csv.";
-const errorMsg = "Un problème est survenu dans le serveur, contacter l'administrateur.";
+let successMsg =  document.createElement("span");
+successMsg.innerText = "Les addresses ont bien été chargé depuis le csv.";
+let errorMsg = document.createElement("span");
+errorMsg.innerText = "Un problème est survenu dans le serveur, contacter l'administrateur.";
+let deleteBtn = document.createElement("button");
+deleteBtn.classList.add("delete");
 
 
 notif.hidden = true;
@@ -19,22 +23,23 @@ loader.onclick = () => {
         if (client.readyState == 4 && client.status == "200") {
             console.table(client);
             console.log("Adresses Loaded");
-            notif.innerText = successMsg;
-            notif.classList.add("is-success");
             
-            //Append to field
-            //<p class="help is-success">This username is available</p>
-            //  <p class="help is-danger">This email is invalid</p>
-            // <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+            notif.removeChild(loadingSpinner);
+            notif.append(successMsg);
+            notif.classList.add("is-success");
+            notif.append(deleteBtn);
+
+            
+           
         }
         
         else {
             console.error(data);
-            notif.innerText = errorMsg ;
+            notif.append(errorMsg);
             notif.classList.add("is-danger");
-             // Append to field
-        //  <p class="help is-danger">This email is invalid</p>
-        // <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+            notif.append(deleteBtn);
+            
+             
         }
       }
     
