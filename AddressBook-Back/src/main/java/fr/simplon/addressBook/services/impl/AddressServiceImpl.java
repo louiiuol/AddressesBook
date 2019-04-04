@@ -60,7 +60,6 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public void loading() {
-	System.out.println(parse());
 	
 	repoAddress.saveAll(parse());
     }
