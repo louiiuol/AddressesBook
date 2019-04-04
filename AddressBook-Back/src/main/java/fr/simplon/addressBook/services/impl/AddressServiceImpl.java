@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -51,7 +50,7 @@ public class AddressServiceImpl implements AddressService {
 		    }
 		}
 	} catch (FileNotFoundException e) {
-	    System.out.println("ya un pb");
+	    System.out.println("File not found, please check your config!");
 	} catch (IOException e) {
 	    // TODO Auto-generated catch block
 	    e.printStackTrace();
@@ -61,9 +60,7 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public void loading() {
-	System.out.println(parse());
 	
 	repoAddress.saveAll(parse());
     }
 }
-//ok
