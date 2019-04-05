@@ -8,10 +8,10 @@ body {
     max-height: 75px !important;
 }
 .notification {
-    position: absolute;
-    bottom: 35px;
+    position: fixed;
+    top: 80%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
     padding-left: 35px;
     background: none;

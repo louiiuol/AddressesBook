@@ -8,8 +8,8 @@ let successMsg =  document.createElement("span");
 successMsg.innerText = "Les addresses ont bien été chargé depuis le csv.";
 let errorMsg = document.createElement("span");
 errorMsg.innerText = "Un problème est survenu dans le serveur, contacter l'administrateur.";
-let deleteBtn = document.createElement("button");
-deleteBtn.classList.add("delete");
+let closeBtn = document.getElementsByClassName('delete');
+
 
 
 notif.hidden = true;
@@ -23,23 +23,22 @@ loader.onclick = () => {
     
         if (client.readyState == 4 && client.status == "200") {
             console.table(client);
-            console.log("message: " + client.statusText);
             console.log("Adresses Loaded");
-            
             notif.removeChild(loadingSpinner);
             notif.append(successMsg);
             notif.classList.add("is-success");
-            notif.append(deleteBtn);
+            notif.append(closeBtn);
 
-            
-           
         }
         
         else {
             console.error(data);
+            console.log("message: " + client.status);
+            errorMsg.innerText = "Error N°" + client.status + ": " + client.responseText;
             notif.append(errorMsg);
             notif.classList.add("is-danger");
             notif.append(deleteBtn);
+
              
         }
       }
@@ -49,13 +48,16 @@ loader.onclick = () => {
 
     client.send(); 
 
-    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-      $notification = $delete.parentNode;
-      $delete.addEventListener('click', () => {
-        $notification.parentNode.removeChild($notification);
-      });
-    });
+    
 };
 
+
+(document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+  $notification = $delete.parentNode;
+  $delete.addEventListener('click', () => {
+    console.log('hello boy');
+    $notification.parentNode.removeChild($notification);
+  });
+});
 
 
