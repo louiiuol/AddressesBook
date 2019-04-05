@@ -4,6 +4,7 @@
 An application to manage your Addresses by: 
 * Import a CSV File 
 * Posting an Address with a form
+* More features coming soon ...
 
 ## Getting Started
 
