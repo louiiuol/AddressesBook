@@ -17,11 +17,13 @@ notif.hidden = true;
 loader.onclick = () => {
     client = new XMLHttpRequest();
     notif.append(loadingSpinner);
+    loader.classList.add("hidden")
     notif.hidden = false;
     client.onload = function (data) {
     
         if (client.readyState == 4 && client.status == "200") {
             console.table(client);
+            console.log("message: " + client.statusText);
             console.log("Adresses Loaded");
             
             notif.removeChild(loadingSpinner);
@@ -38,7 +40,6 @@ loader.onclick = () => {
             notif.append(errorMsg);
             notif.classList.add("is-danger");
             notif.append(deleteBtn);
-            
              
         }
       }
@@ -47,17 +48,14 @@ loader.onclick = () => {
     client.setRequestHeader('Content-type','charset=utf-8');
 
     client.send(); 
-};
 
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
     (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
       $notification = $delete.parentNode;
       $delete.addEventListener('click', () => {
         $notification.parentNode.removeChild($notification);
       });
     });
-  });
+};
+
+
+

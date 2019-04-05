@@ -1,7 +1,6 @@
 package fr.simplon.addressBook.services.impl;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,8 +8,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import fr.simplon.addressBook.entities.Address;
+import fr.simplon.addressBook.exceptions.InvalidFileNameException;
 import fr.simplon.addressBook.repository.AddressJpaRepository;
 import fr.simplon.addressBook.services.AddressService;
 
@@ -27,7 +28,7 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public List<Address> parse() {
+    public List<Address> parse()  {
 	List<Address> address = new ArrayList<>();
 	try (BufferedReader br = new BufferedReader(new FileReader(url))) {
 	    String line;
@@ -47,20 +48,22 @@ public class AddressServiceImpl implements AddressService {
 				address.add(new Address(cityName, zipCode));
 			    }
 			}
-		    }
+			}
 		}
-	} catch (FileNotFoundException e) {
-	    System.out.println("File not found, please check your config!");
 	} catch (IOException e) {
 	    // TODO Auto-generated catch block
 	    e.printStackTrace();
+	    if ("".equals(url) || url != "src/main/resources/poste.csv") {
+			throw new InvalidFileNameException("File not found !!", e);
+		}
 	}
 	return address;
     }
 
     @Override
+    @Transactional
     public void loading() {
-	
+	repoAddress.removeAll();
 	repoAddress.saveAll(parse());
     }
 }
