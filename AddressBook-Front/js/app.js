@@ -2,23 +2,21 @@ const loader = document.getElementById('loader');
 const notif = document.getElementById('notif');
 const url = "http://localhost:8082/AddressBook/loading/";
 
-let loadingSpinner = document.createElement("i");
-loadingSpinner.classList.add("fas", "fa-spinner", "fa-pulse");
+let loadingSpinner = document.getElementsByClassName("fa-spinner");
+
 let successMsg =  document.createElement("span");
-successMsg.innerText = "Les addresses ont bien été chargé depuis le csv.";
+  successMsg.innerText = "Les addresses ont bien été chargé depuis le csv.";
+
 let errorMsg = document.createElement("span");
-errorMsg.innerText = "Un problème est survenu dans le serveur, contacter l'administrateur.";
+
 let closeBtn = document.getElementsByClassName('delete');
 
-
-
-notif.hidden = true;
+notif.hidden = loadingSpinner.hidden = true;
 
 loader.onclick = () => {
     client = new XMLHttpRequest();
-    notif.append(loadingSpinner);
-    loader.classList.add("hidden")
-    notif.hidden = false;
+    loader.classList.add("hidden");
+    notif.hidden = loadingSpinner.hidden = false;
     client.onload = function (data) {
     
         if (client.readyState == 4 && client.status == "200") {

@@ -8,9 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 /**
- * @author Anne-sophie, Johnathan, Alex, Pascal, Louis and Nathalie
  * 
- * this class generate an ID.
+ * <h3>this entity generate a dynamic ID for entities present in this package.</h3>
+ * 
+ * @see GeneratedValue
+ * @see GenerationType
+ * @see Serializable
+ * @see MappedSuperclass
  *
  */
 
@@ -22,30 +26,16 @@ public abstract class AbstractEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-
     protected AbstractEntity() {
-	super();
+	    super();
     }
 
-
-    
-    /**
-     * @return id
-     */
     public Long getId() {
         return id;
     }
 
-
-    
-    /**
-     * @param id
-     */
     public void setId(Long id) {
         this.id = id;
     }
-    
-    
-
     
 }

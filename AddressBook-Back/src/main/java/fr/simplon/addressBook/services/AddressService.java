@@ -9,8 +9,6 @@ public interface AddressService {
     
     void loading();
     
-    public List<Address> parse() throws InvalidFileNameException;
-
-    
+    public List<Address> parseCsv() throws InvalidFileNameException;
     
 }

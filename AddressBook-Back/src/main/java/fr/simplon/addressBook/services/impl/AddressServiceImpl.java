@@ -28,31 +28,32 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public List<Address> parse()  {
-	List<Address> address = new ArrayList<>();
-	try (BufferedReader br = new BufferedReader(new FileReader(url))) {
-	    String line;
-	    while ((line = br.readLine()) != null) {
-		String[] values = line.split(";");
-		String zipCode = null;
-		String cityName = null;
-		for (int i = 0; i < values.length; i++) {
-			if (i == 1) {
-			    if (values[i].equals("Nom_commune")) {
-				break;}
-			    cityName = values[i];
-			} else if (i == 2) {
-			    zipCode = values[i];
-			} else {
-			    if (i == 3) {
-				address.add(new Address(cityName, zipCode));
-			    }
-			}
+    public List<Address> parseCsv()  {
+	
+		List<Address> address = new ArrayList<>();
+		String line;
+
+		try (BufferedReader br = new BufferedReader(new FileReader(url))) {
+			
+			
+			while ((line = br.readLine()) != null) {
+
+			String[] values = line.split(";");
+			String zipCode = null;
+			String cityName = null;
+			
+			for (int i = 0; i < values.length; i++) {
+				if (i == 1) {
+					if (values[i].equals("Nom_commune")) { break;}
+					cityName = values[i];
+				} else if (i == 2) {
+					zipCode = values[i];
+				} else if (i == 3) {
+					address.add(new Address(cityName, zipCode));
+				}
 			}
 		}
 	} catch (IOException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
 	    if ("".equals(url) || url != "src/main/resources/poste.csv") {
 			throw new InvalidFileNameException("File not found !!", e);
 		}
@@ -64,6 +65,6 @@ public class AddressServiceImpl implements AddressService {
     @Transactional
     public void loading() {
 	repoAddress.removeAll();
-	repoAddress.saveAll(parse());
+	repoAddress.saveAll(parseCsv());
     }
 }

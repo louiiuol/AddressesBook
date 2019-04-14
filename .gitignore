@@ -1,8 +1,32 @@
-HELP.md
+### Maven ### 
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
 
-!.mvn/wrapper/maven-wrapper.jar
+### SASS ###
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
 
-### STS ###
+### Node ### 
+node_modules/
+jspm_packages/
+typings/
+logs
+bower_components
+.grunt
+.npm
+*.log
+
+### Spring ###
 .apt_generated
 .classpath
 .factorypath
@@ -17,12 +41,6 @@ bin/
 .mvn/
 mvnw.cmd
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -32,8 +50,103 @@ mvnw.cmd
 /build/
 
 ### VS Code ###
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-### GENERAL ### 
+### Eclipse ### .metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.externalToolBuilders/
+*.launch
+*.pydevproject
+.cproject
+.autotools
+.factorypath
+.buildpath
+.target
+.tern-project
+.texlipse
+.springBeans
+.recommenders/
+.apt_generated/
+.cache-main
+.scala_dependencies
+.worksheet
 
-.DS_STORE
+### Intellij ### 
+out/
+.idea/replstate.xml
+.idea/httpRequests
+.idea/caches/build_file_checksums.ser
+.idea/**/mongoSettings.xml
+.idea_modules/
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/contentModel.xml
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+### Gradle ###
+.idea/**/gradle.xml
+.idea/**/libraries
+
+### JIRA plugin ###
+atlassian-ide-plugin.xml
+
+### WINDOWS ### 
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+### MACOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Linux ### 
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
