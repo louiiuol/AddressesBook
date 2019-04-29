@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
-import fr.simplon.addressBook.entities.Address;
+import fr.simplon.addressBook.entities.City;
 
 /**
  * 
@@ -16,7 +16,7 @@ import fr.simplon.addressBook.entities.Address;
  * @see Address
  * 
 */
-public interface AddressJpaRepository extends JpaRepository<Address, Long> {
+public interface CityJpaRepository extends JpaRepository<City, Long> {
 
     @Modifying 
     @Query("DELETE FROM Address")

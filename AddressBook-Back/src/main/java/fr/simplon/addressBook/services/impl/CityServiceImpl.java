@@ -10,27 +10,27 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.simplon.addressBook.entities.Address;
+import fr.simplon.addressBook.entities.City;
 import fr.simplon.addressBook.exceptions.InvalidFileNameException;
-import fr.simplon.addressBook.repository.AddressJpaRepository;
-import fr.simplon.addressBook.services.AddressService;
+import fr.simplon.addressBook.repository.CityJpaRepository;
+import fr.simplon.addressBook.services.CityService;
 
 @Service
-public class AddressServiceImpl implements AddressService {
+public class CityServiceImpl implements CityService {
 
-    private final AddressJpaRepository repoAddress;
+    private final CityJpaRepository repoAddress;
 
     @Value("${file.csv}")
     public String url;
 
-    public AddressServiceImpl(AddressJpaRepository repoAddress) {
+    public CityServiceImpl(CityJpaRepository repoAddress) {
 	this.repoAddress = repoAddress;
     }
 
     @Override
-    public List<Address> parseCsv()  {
+    public List<City> parseCsv()  {
 	
-		List<Address> address = new ArrayList<>();
+		List<City> cities = new ArrayList<>();
 		String line;
 
 		try (BufferedReader br = new BufferedReader(new FileReader(url))) {
@@ -41,6 +41,7 @@ public class AddressServiceImpl implements AddressService {
 			String[] values = line.split(";");
 			String zipCode = null;
 			String cityName = null;
+			String country = null;
 			
 			for (int i = 0; i < values.length; i++) {
 				if (i == 1) {
@@ -49,7 +50,7 @@ public class AddressServiceImpl implements AddressService {
 				} else if (i == 2) {
 					zipCode = values[i];
 				} else if (i == 3) {
-					address.add(new Address(cityName, zipCode));
+					cities.add(new City(cityName, zipCode, country));
 				}
 			}
 		}
@@ -58,13 +59,13 @@ public class AddressServiceImpl implements AddressService {
 			throw new InvalidFileNameException("File not found !!", e);
 		}
 	}
-	return address;
+	return cities;
     }
 
     @Override
     @Transactional
     public void loading() {
-	repoAddress.removeAll();
-	repoAddress.saveAll(parseCsv());
+		repoAddress.removeAll();
+		repoAddress.saveAll(parseCsv());
     }
 }
