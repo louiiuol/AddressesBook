@@ -27,46 +27,60 @@ public class City extends AbstractEntity {
     @Column(length = 100, nullable = false)
     private String cityName; 
     
-    @Column(length = 10, nullable = false)
+    @Column(length = 5, nullable = false)
     private String zipCode;
 
-    @Column(length = 10)
-    private String country;
+    @Column(length = 100, nullable = true)
+    private Double latitude;
 
-    public City(String city, String zipCode, String country) {
-    	super();
-    	this.zipCode = zipCode;
-        this.cityName = city;
-        this.country = country;
-    }
-
-    public String getCityName() {
-        return cityName;
-    }
- 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
-
-    public String getZipCode() {
-        return zipCode;
-    }
-
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
-    }
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    @Override
-    public String toString() {
-        return "City [cityName=" + cityName + ", country=" + country + ", zipCode=" + zipCode + "]";
-    }
+    @Column(length = 100, nullable = true)
+    private Double longitude;
     
+
+	public City(String cityName, String zipCode, Double latitude, Double longitude) {
+		super();
+		this.cityName = cityName;
+		this.zipCode = zipCode;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+
+	public String getCityName() {
+		return cityName;
+	}
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public Double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+
+	public Double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
+	}
+
+	@Override
+	public String toString() {
+		return "City [cityName=" + cityName + ", zipCode=" + zipCode + ", latitude=" + latitude + ", longitude="
+				+ longitude + "]";
+	}
     
 }
