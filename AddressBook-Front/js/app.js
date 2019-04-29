@@ -1,6 +1,12 @@
 const loader = document.getElementById('loader');
 const notif = document.getElementById('notif');
-const url = "http://localhost:8082/AddressBook/loading/";
+const url = "http://localhost:8082/City/loading/";
+const spin = document.getElementById('spin');
+const url_post = "http://localhost:8082/Address/";
+const postAddress = document.getElementById('postAddress');
+
+let successMsgPost =  document.createElement("span");
+  successMsgPost.innerText = "L'adresse a bien été créé.";
 
 let loadingSpinner = document.getElementsByClassName("fa-spinner");
 
@@ -49,6 +55,36 @@ loader.onclick = () => {
     
 };
 
+postAddress.onclick =() => {
+  client = new XMLHttpRequest();
+  
+  client.open('POST', url_post, true);
+  client.setRequestHeader('Content-type','charset=utf-8');
+  client.send();
+
+  client.onload = function (data) {
+    if (client.readyState == 4 && client.status == "201") {
+      console.table(client);
+      console.log("Adresses posted");
+      spin.removeChild(loadingSpinner);
+      spin.append(successMsgPost);
+      spin.classList.add("is-success");
+      spin.append(closeBtn);
+ }
+  else {
+      console.error(data);
+      console.log("message: " + client.status);
+      errorMsg.innerText = "Error N°" + client.status + ": " + client.responseText;
+      spin.append(errorMsg);
+      spin.classList.add("is-danger");
+      spin.append(deleteBtn);
+    }
+  }
+}
+
+
+
+
 
 (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
   $notification = $delete.parentNode;
@@ -57,5 +93,8 @@ loader.onclick = () => {
     $notification.parentNode.removeChild($notification);
   });
 });
+
+
+
 
 

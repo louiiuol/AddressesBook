@@ -94,7 +94,7 @@
                 <h6> Form </h6>
                 <label class="radio">
                   <input type="radio" name="answer">
-                  individual
+                  Individual
                 </label>
                 <label class="radio">
                   <input type="radio" name="answer">
@@ -106,7 +106,7 @@
 
         <section class="form-address">
             <div class="field">
-                <label class="label">Receiver</label>
+                <label class="label">Addressee</label>
                 <div class="control">
                   <input class="input" type="text" placeholder="titre, nom et prénom">
                   <p class="help is-danger">
@@ -122,14 +122,14 @@
                 
               </div>
               <div class="field">
-                <label class="label">Complement</label>
+                <label class="label">Complementary</label>
                 <div class="control">
                   <input class="input" type="text" placeholder="Batiment">
                 </div>
                 
               </div>
               <div class="field">
-                <label class="label">N° and types of roads</label>
+                <label class="label">Street</label>
                 <div class="control">
                   <input class="input" type="text" placeholder="Alley, avenue...">
                   <p class="help is-danger">
@@ -164,6 +164,15 @@
                         This field is required
                       </p>
                   </div>
+
+                  <button class="button is-link" id="postAddress">Submit</button>
+                  
+                  <div id="spin" class="notification">
+                    <i class="fas fa-spinner fa-pulse"></i>
+                     <button class="delete"></button>   
+                </div>
+
+
         </section>
     </div>
 
