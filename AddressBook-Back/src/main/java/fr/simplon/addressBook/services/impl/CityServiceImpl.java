@@ -41,7 +41,7 @@ public class CityServiceImpl implements CityService {
 			String[] values = line.split(";");
 			String zipCode = null;
 			String cityName = null;
-			String country = null;
+			String gpsCoordinates = null;
 			
 			for (int i = 0; i < values.length; i++) {
 				if (i == 1) {
@@ -49,8 +49,12 @@ public class CityServiceImpl implements CityService {
 					cityName = values[i];
 				} else if (i == 2) {
 					zipCode = values[i];
-				} else if (i == 3) {
-					cities.add(new City(cityName, zipCode, country));
+				} else if (i == 5) {
+					gpsCoordinates = values[i];					
+					String[] tab = gpsCoordinates.split(",");
+					Double latitude = Double.parseDouble(tab[0]);
+					Double longitude = Double.parseDouble(tab[1]);
+					cities.add(new City(cityName, zipCode, latitude, longitude));
 				}
 			}
 		}

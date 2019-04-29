@@ -1,4 +1,4 @@
-package fr.simplon.adressBook;
+package fr.simplon.addressBook;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
