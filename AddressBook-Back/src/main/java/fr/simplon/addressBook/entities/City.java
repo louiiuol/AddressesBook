@@ -36,6 +36,14 @@ public class City extends AbstractEntity {
     @Column(length = 100, nullable = true)
     private Double longitude;
     
+    public City(String city, String zipCode) {
+    	super();
+    	this.zipCode = zipCode;
+        this.cityName = city;
+    }
+    protected City() {
+    }
+
 
 	public City(String cityName, String zipCode, Double latitude, Double longitude) {
 		super();
