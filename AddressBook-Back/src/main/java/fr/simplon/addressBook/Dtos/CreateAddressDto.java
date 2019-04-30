@@ -21,8 +21,7 @@ public class CreateAddressDto {
 
     private String distribService;
 
-    @NotNull
-    private City city;
+    private Long cityId;
 
     @NotNull
     private Boolean isProfessional;
@@ -71,12 +70,12 @@ public class CreateAddressDto {
 	this.distribService = distribService;
     }
 
-    public City getCity() {
-	return city;
+    public Long getCityId() {
+	return cityId;
     }
 
-    public void setCity(City city) {
-	this.city = city;
+    public void setCityId(Long cityId) {
+	this.cityId = cityId;
     }
 
     public Boolean getIsProfessional() {
@@ -92,6 +91,7 @@ public class CreateAddressDto {
 	return "CreateAddressDto [addressee=" + addressee + ", deliveryPoint="
 		+ deliveryPoint + ", complementary=" + complementary
 		+ ", street=" + street + ", distribService=" + distribService
-		+ ", city=" + city + ", isProfessional=" + isProfessional + "]";
+		+ ", cityId=" + cityId + ", isProfessional=" + isProfessional
+		+ "]";
     }
 }

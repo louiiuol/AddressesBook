@@ -39,6 +39,8 @@ public class City extends AbstractEntity {
         this.cityName = city;
         this.country = country;
     }
+    protected City() {
+    }
 
     public String getCityName() {
         return cityName;

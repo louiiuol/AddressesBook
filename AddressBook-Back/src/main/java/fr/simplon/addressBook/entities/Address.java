@@ -2,6 +2,8 @@ package fr.simplon.addressBook.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 /**
  *  
@@ -36,7 +38,7 @@ public class Address extends AbstractEntity {
 
     private String distribService;
 
-    @Column(nullable = false)
+    @ManyToOne
     private City city;
 
     @Column(nullable = false)
