@@ -69,7 +69,7 @@ public class CityServiceImpl implements CityService {
     @Override
     @Transactional
     public void loading() {
-		repoAddress.removeAll();
-		repoAddress.saveAll(parseCsv());
+			repoAddress.removeAll();
+			repoAddress.saveAll(parseCsv());
     }
 }
