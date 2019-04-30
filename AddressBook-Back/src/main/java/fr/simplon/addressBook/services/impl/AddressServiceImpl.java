@@ -4,12 +4,14 @@ import javax.validation.Valid;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import fr.simplon.addressBook.Dtos.CreateAddressDto;
 import fr.simplon.addressBook.entities.Address;
 import fr.simplon.addressBook.repository.AddressJpaRepository;
 import fr.simplon.addressBook.services.AddressService;
 
+@Service
 public class AddressServiceImpl implements AddressService {
 
     @Autowired
