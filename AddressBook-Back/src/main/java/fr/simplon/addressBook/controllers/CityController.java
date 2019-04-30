@@ -1,11 +1,19 @@
 package fr.simplon.addressBook.controllers;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.simplon.addressBook.AddressBookApplication;
+import fr.simplon.addressBook.Dtos.FindCitiesByZipCodeDto;
 import fr.simplon.addressBook.services.CityService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 
@@ -25,8 +33,10 @@ import fr.simplon.addressBook.services.CityService;
  */
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/City")
+@RequestMapping("/")
 public class CityController {
+
+    private static final Logger logger = LoggerFactory.getLogger(AddressBookApplication.class);
     
     /**
      * @see CityService
@@ -43,9 +53,17 @@ public class CityController {
      * @see GetMapping
      * @see CityService
      */
-    @GetMapping("/loading")
+    @GetMapping("/City/loading")
     protected void loading() {
 	    cityService.loading();
     }
     
+    @GetMapping("/City")
+    protected List<FindCitiesByZipCodeDto> findCitiesByZipCode(
+        @RequestParam(value = "zipCode", required = true) String zipCode
+    ) {
+        logger.info("ZipCode:" + zipCode);
+        List<FindCitiesByZipCodeDto> toto = cityService.findCitiesByZipCode(zipCode);
+        return toto;
+    }
 }

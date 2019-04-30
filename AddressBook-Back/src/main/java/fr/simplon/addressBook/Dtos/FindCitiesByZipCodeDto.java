@@ -1,13 +1,43 @@
 package fr.simplon.addressBook.Dtos;
 
-import javax.persistence.Column;
-
 public class FindCitiesByZipCodeDto {
-    @Column(length = 100, nullable = false)
-private String cityName; 
 
-    @Column(length = 5, nullable = false)
-    private String zipCode;
+    private Long id;
+
+    private String cityName; 
+
+    public FindCitiesByZipCodeDto(Long id, String cityName) {
+        this.id = id;
+        this.cityName = cityName;
+    }
+
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the cityName
+     */
+    public String getCityName() {
+        return cityName;
+    }
+
+    /**
+     * @param cityName the cityName to set
+     */
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    
 }
-
-

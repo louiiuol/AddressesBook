@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class AddressBookApplication {
+
 	private static final Logger logger = LoggerFactory.getLogger(AddressBookApplication.class);
 
 	public static void main(String[] args) {
@@ -20,9 +21,9 @@ public class AddressBookApplication {
 	}
 
 	@Bean
-	    public ModelMapper mapper() {
-		// Could be configured changing default configuration
-		return new ModelMapper();
-	    }
+	public ModelMapper mapper() {
+	// Could be configured changing default configuration
+	return new ModelMapper();
+	}
 
 }
