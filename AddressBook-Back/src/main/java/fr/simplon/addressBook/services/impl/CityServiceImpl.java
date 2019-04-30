@@ -40,27 +40,33 @@ public class CityServiceImpl implements CityService {
 			List<String> contents = Files.readAllLines(Paths.get(url));
 			for (String content:contents ) {
 				
+				
 				String[] values = content.split(";");
+				if (values[0].equals("Code_commune_INSEE")) {
+					continue;
+				}
 				String zipCode = null;
 				String cityName = null;
 				String gpsCoordinates = null;
+				Double latitude = null;
+				Double longitude = null;
 				
-				for (int i = 0; i < values.length; i++) {
-					if (i == 1) {
-						if (values[i].equals("Nom_commune")) { break;}
-						cityName = values[i];
-					} else if (i == 2) {
-						zipCode = values[i];
-					} else if (i == 5) {
-						gpsCoordinates = values[i];
-						if (!gpsCoordinates.equals(null) && !cityName.equals(null)&& !zipCode.equals(null)) {
-							String[] tab = gpsCoordinates.split(",");
-							Double latitude = Double.valueOf(tab[0]);
-							Double longitude = Double.valueOf(tab[1]);
-							cities.add(new City(cityName, zipCode, latitude, longitude));}
+				if (values.length == 4 || (values.length == 5 && !(values[values.length-1].contains(",")))) {
+					latitude = null;
+					longitude = null;
+				}else { 
+					if ((values.length == 5 && values[values.length-1].contains(",")) || values.length == 6) {
+						gpsCoordinates = values[values.length-1];
+						String[] tab = gpsCoordinates.split(",");
+						latitude = Double.valueOf(tab[0]);
+						longitude = Double.valueOf(tab[1]);
+						}
 					}
-				}
+				cityName = values[1];
+				zipCode = values[2];
+				cities.add(new City(cityName, zipCode, latitude, longitude));
 			}
+				
 		} catch (IOException e) {
 	    if ("".equals(url) || url != "src/main/resources/poste.csv") {
 			throw new InvalidFileNameException("File not found !!", e);
