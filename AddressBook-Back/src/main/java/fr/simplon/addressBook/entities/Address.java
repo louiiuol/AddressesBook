@@ -3,7 +3,6 @@ package fr.simplon.addressBook.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotNull;
 
 /**
  *  
@@ -29,13 +28,16 @@ public class Address extends AbstractEntity {
     @Column(length = 38, nullable = false)
     private String addressee;
 
+    @Column(length = 38, nullable = true)
     private String deliveryPoint; 
 
+    @Column(length = 38, nullable = true)
     private String complementary;
 
     @Column(length = 38, nullable = false)
     private String street;
 
+    @Column(length = 38, nullable = true)
     private String distribService;
 
     @ManyToOne
@@ -44,103 +46,50 @@ public class Address extends AbstractEntity {
     @Column(nullable = false)
     private Boolean isProfessional;
 
-    /**
-     * @return the addressee
-     */
-    public String getAddressee() {
-        return addressee;
-    }
+    protected Address() { super(); }
 
-    /**
-     * @param addressee the addressee to set
-     */
-    public void setAddressee(String addressee) {
+    public Address(String addressee, String street, String distribService, City city, Boolean isProfessional) {
+        super();
         this.addressee = addressee;
-    }
-
-    /**
-     * @return the deliveryPoint
-     */
-    public String getDeliveryPoint() {
-        return deliveryPoint;
-    }
-
-    /**
-     * @param deliveryPoint the deliveryPoint to set
-     */
-    public void setDeliveryPoint(String deliveryPoint) {
-        this.deliveryPoint = deliveryPoint;
-    }
-
-    /**
-     * @return the complementary
-     */
-    public String getComplementary() {
-        return complementary;
-    }
-
-    /**
-     * @param complementary the complementary to set
-     */
-    public void setComplementary(String complementary) {
-        this.complementary = complementary;
-    }
-
-    /**
-     * @return the street
-     */
-    public String getStreet() {
-        return street;
-    }
-
-    /**
-     * @param street the street to set
-     */
-    public void setStreet(String street) {
         this.street = street;
-    }
-
-    /**
-     * @return the distribService
-     */
-    public String getDistribService() {
-        return distribService;
-    }
-
-    /**
-     * @param distribService the distribService to set
-     */
-    public void setDistribService(String distribService) {
         this.distribService = distribService;
+        this.city = city; 
+        this.isProfessional = isProfessional; 
+        this.deliveryPoint = null; 
+        this.complementary = null;
     }
 
-    /**
-     * @return the city
-     */
-    public City getCity() {
-        return city;
+    public Address(String addressee, String street, String distribService, City city, Boolean isProfessional, String deliveryPoint, String complementary) {
+        this.addressee = addressee;
+        this.street = street;
+        this.distribService = distribService;
+        this.city = city; 
+        this.isProfessional = isProfessional; 
+        this.deliveryPoint = deliveryPoint; 
+        this. complementary = complementary;
     }
 
-    /**
-     * @param city the city to set
-     */
-    public void setCity(City city) {
-        this.city = city;
-    }
+    public String getAddressee() { return addressee; }
 
-    /**
-     * @return the isProfessional
-     */
-    public Boolean getIsProfessional() {
-        return isProfessional;
-    }
+    public void setAddressee(String addressee) { this.addressee = addressee; }
 
-    /**
-     * @param isProfessional the isProfessional to set
-     */
-    public void setIsProfessional(Boolean isProfessional) {
-        this.isProfessional = isProfessional;
-    }
+    public String getDeliveryPoint() { return deliveryPoint; }
+    public void setDeliveryPoint(String deliveryPoint) { this.deliveryPoint = deliveryPoint; }
+
+    public String getComplementary() { return complementary; }
+    public void setComplementary(String complementary) { this.complementary = complementary; }
+
+    public String getStreet() { return street; }
+    public void setStreet(String street) { this.street = street; }
+
+    public String getDistribService() { return distribService; }
+    public void setDistribService(String distribService) { this.distribService = distribService; }
+
+    public City getCity() { return city; }
+    public void setCity(City city) { this.city = city; }
+
+    public Boolean getIsProfessional() { return isProfessional; }
+    public void setIsProfessional(Boolean isProfessional) { this.isProfessional = isProfessional; }
 
     @Override
     public String toString() {
@@ -148,6 +97,5 @@ public class Address extends AbstractEntity {
                 + ", deliveryPoint=" + deliveryPoint + ", distribService=" + distribService + ", isProfessional="
                 + isProfessional + ", street=" + street + "]";
     }
-    
     
 }

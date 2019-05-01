@@ -39,11 +39,11 @@ public class City extends AbstractEntity {
     public City(String city, String zipCode) {
     	super();
     	this.zipCode = zipCode;
-        this.cityName = city;
+		this.cityName = city;
+		this.latitude = null; 
+		this.longitude = null;
     }
-    protected City() {
-    }
-
+    protected City() { }
 
 	public City(String cityName, String zipCode, Double latitude, Double longitude) {
 		super();
@@ -53,37 +53,21 @@ public class City extends AbstractEntity {
 		this.longitude = longitude;
 	}
 
-	public String getCityName() {
-		return cityName;
-	}
+	public String getCityName() { return cityName; }
 
-	public void setCityName(String cityName) {
-		this.cityName = cityName;
-	}
+	public void setCityName(String cityName) { this.cityName = cityName; }
 
-	public String getZipCode() {
-		return zipCode;
-	}
+	public String getZipCode() { return zipCode; }
 
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
-	}
+	public void setZipCode(String zipCode) { this.zipCode = zipCode; }
 
-	public Double getLatitude() {
-		return latitude;
-	}
+	public Double getLatitude() { return latitude; }
 
-	public void setLatitude(Double latitude) {
-		this.latitude = latitude;
-	}
+	public void setLatitude(Double latitude) { this.latitude = latitude; }
 
-	public Double getLongitude() {
-		return longitude;
-	}
+	public Double getLongitude() { return longitude; }
 
-	public void setLongitude(Double longitude) {
-		this.longitude = longitude;
-	}
+	public void setLongitude(Double longitude) { this.longitude = longitude; }
 
 	@Override
 	public String toString() {

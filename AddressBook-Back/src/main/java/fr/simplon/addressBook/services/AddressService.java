@@ -1,8 +1,6 @@
 package fr.simplon.addressBook.services;
 
-import javax.validation.Valid;
-
-import fr.simplon.addressBook.Dtos.CreateAddressDto;
+import fr.simplon.addressBook.entities.dtos.CreateAddressDto;
 
 public interface AddressService {
 

@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
-import fr.simplon.addressBook.Dtos.FindCitiesByZipCodeDto;
 import fr.simplon.addressBook.entities.City;
+import fr.simplon.addressBook.entities.dtos.SearchCitiesByZipCodeDto;
 
 /**
  * 
@@ -26,7 +26,7 @@ public interface CityJpaRepository extends JpaRepository<City, Long> {
     void removeAll();
 
     @Modifying
-    @Query("SELECT new fr.simplon.addressBook.Dtos.FindCitiesByZipCodeDto(id, cityName) FROM City WHERE zipCode= ?1")
-    List<FindCitiesByZipCodeDto> findByZipCode(String zipCode);
+    @Query("SELECT new fr.simplon.addressBook.entities.dtos.SearchCitiesByZipCodeDto(id, cityName) FROM City WHERE zipCode= ?1")
+    List<SearchCitiesByZipCodeDto> findByZipCode(String zipCode);
 
 }

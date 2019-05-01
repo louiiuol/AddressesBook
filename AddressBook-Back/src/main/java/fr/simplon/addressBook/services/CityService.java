@@ -2,16 +2,16 @@ package fr.simplon.addressBook.services;
 
 import java.util.List;
 
-import fr.simplon.addressBook.Dtos.FindCitiesByZipCodeDto;
 import fr.simplon.addressBook.entities.City;
+import fr.simplon.addressBook.entities.dtos.SearchCitiesByZipCodeDto;
 import fr.simplon.addressBook.exceptions.InvalidFileNameException;
 
 public interface CityService {
     
     void loading();
     
-    public List<City> parseCsv() throws InvalidFileNameException;
+    List<City> parseCsv() throws InvalidFileNameException;
 
-	List<FindCitiesByZipCodeDto> findCitiesByZipCode(String zipCode);
+	List<SearchCitiesByZipCodeDto> findCitiesByZipCode(String zipCode);
     
 }

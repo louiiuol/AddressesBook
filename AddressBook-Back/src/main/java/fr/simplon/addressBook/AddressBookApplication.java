@@ -15,15 +15,12 @@ public class AddressBookApplication {
 	private static final Logger logger = LoggerFactory.getLogger(AddressBookApplication.class);
 
 	public static void main(String[] args) {
-		logger.info("Starting....");
+		logger.info("Starting Spring Boot Application....");
 		SpringApplication.run(AddressBookApplication.class, args);
-		logger.info("Started!!");
+		logger.info("Application Started!!");
 	}
 
 	@Bean
-	public ModelMapper mapper() {
-	// Could be configured changing default configuration
-	return new ModelMapper();
-	}
+	public ModelMapper mapper() { return new ModelMapper(); }
 
 }

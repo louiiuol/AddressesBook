@@ -1,16 +1,16 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Address Book - Home </title>
+        <title>Address Book - Admin</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <link rel="stylesheet" href="./css/bulma.min.css">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="../css/bulma.min.css">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item" href="./index.html"><img src="./img/logo.png" class="logoImg" height="28"></a>
+                <a class="navbar-item" href="../index.html"><img src="../img/logo.png" class="logoImg" height="28"></a>
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
                 </a>
@@ -18,9 +18,9 @@
             
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="#">Home</a>
-                    <a class="navbar-item" href="./html/address.html">Address</a>
-                    <a class="navbar-item" href="./html/admin.html">Admin</a>
+                    <a class="navbar-item" href="../index.html">Home</a>
+                    <a class="navbar-item" href="./address.html">Address</a>
+                    <a class="navbar-item" href="#">Admin</a>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">More</a>
                         <div class="navbar-dropdown">
@@ -43,25 +43,25 @@
                 </div>
             </div>
         </nav>
-
-        <section class="section addresses-loader">
-            <section class="hero">
-                <div class="hero-body">
-                  <div class="container">
-                    <h1 class="title">Welcome to Addresses Book !</h1>
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">Load the CSV File here !</h1>
                     <hr>
-                    <h2 class="subtitle">A site where you can manage all the addresses of your dreams <i class="fas fa-cloud"></i> !! </h2>
-                  </div>
+                    <h2 class="subtitle">Trigger the loading of CSV file by clicking on the button below. </h2>
+                    <br>
+                    <button class="button is-primary is-large load" id="loader">Click me !</button>
                 </div>
-            </section>
-            <figure class="image is-100"><img src="./img/imgBanner.jpg"></figure>
+            </div>
         </section>
-
+        <div id="notif" class="notification">
+            <i class="fas fa-spinner fa-pulse"></i>
+            <button class="delete"></button>   
+        </div>
         <nav class="footer">
             <p>Website made with  <i class="fas fa-heart"></i>  by Simplon</p>
         </nav>
-        
 
-        <script src="./js/app.js"></script>
+        <script src="../js/app.js"></script>
     </body>
 </html>

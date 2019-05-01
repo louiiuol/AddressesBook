@@ -1,0 +1,157 @@
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Address Book - Addresses</title>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+      <link rel="stylesheet" href="../css/bulma.min.css">
+      <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+          <a class="navbar-item" href="../index.html"><img src="../img/logo.png" class="logoImg" height="28"></a>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+          </a>
+      </div>
+      
+      <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+              <a class="navbar-item" href="../index.html">Home</a>
+              <a class="navbar-item" href="#">Address</a>
+              <a class="navbar-item" href="./admin.html">Admin</a>
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">More</a>
+                  <div class="navbar-dropdown">
+                      <a class="navbar-item">About</a>
+                      <a class="navbar-item">Jobs</a>
+                      <a class="navbar-item">Contact</a>
+                      <hr class="navbar-divider">
+                      <a class="navbar-item">Report an issue</a>
+                  </div>
+              </div>
+          </div>
+      
+          <div class="navbar-end">
+              <div class="navbar-item">
+                  <div class="buttons">
+                      <a class="button is-primary"><strong>Sign up</strong></a>
+                      <a class="button is-light">Log in</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </nav>
+      <section class="hero">
+          <div class="hero-body">
+              <div class="container">
+              <h1 class="title">
+                  Create a new Address ! 
+              </h1>
+              <hr>
+              <h2 class="subtitle">
+                  Fill the form below to add a new Address.
+              </h2>
+              
+              </div>
+          </div>
+      </section>
+
+
+  
+  <div class="misepage">
+      <div class="control">
+              <h6> Form </h6>
+              <label class="radio">
+                <input type="radio" name="answer">
+                Individual
+              </label>
+              <label class="radio">
+                <input type="radio" name="answer">
+                Corporate
+              </label>
+      </div>
+        <br>
+        <br>
+
+      <section class="form-address">
+          <div class="field">
+              <label class="label">Addressee</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="titre, nom et prénom">
+                <p class="help is-danger">
+                  This field is required
+                </p>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Delivery point</label>
+              <div class="control">
+                <input class="input" type="text" placeholder=" letter box, floors">
+              </div>
+              
+            </div>
+            <div class="field">
+              <label class="label">Complementary</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Batiment">
+              </div>
+              
+            </div>
+            <div class="field">
+              <label class="label">Street</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Alley, avenue...">
+                <p class="help is-danger">
+                  This field is required
+                </p>
+              </div>
+              
+            </div>
+            <div class="field">
+              <label class="label">Distribution service</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Text input">
+
+              </div>
+              
+            </div>
+            <div class="field">
+              <label class="label">Zipcode</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="75000">
+              </div>
+              <p class="help is-danger">
+                  This field is required
+                </p>
+            </div>
+            <div class="field">
+                  <label class="label">Locality</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Paris">
+                  </div>
+                  <p class="help is-danger">
+                      This field is required
+                    </p>
+                </div>
+
+                <button class="button is-link" id="postAddress">Submit</button>
+                
+                <div id="notif" class="notification">
+                  <i class="fas fa-spinner fa-pulse"></i>
+                    <button class="delete"></button>   
+              </div>
+
+
+      </section>
+  </div>
+
+      <nav class="footer">
+          <p>Website made with  <i class="fas fa-heart"></i>  by Simplon</p>
+      </nav>
+      
+
+      <script src="../js/app.js"></script>
+  </body>
+</html>

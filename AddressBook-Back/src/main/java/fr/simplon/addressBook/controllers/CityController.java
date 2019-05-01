@@ -2,6 +2,9 @@ package fr.simplon.addressBook.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,12 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.simplon.addressBook.AddressBookApplication;
-import fr.simplon.addressBook.Dtos.FindCitiesByZipCodeDto;
+import fr.simplon.addressBook.entities.dtos.SearchCitiesByZipCodeDto;
 import fr.simplon.addressBook.services.CityService;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * 
  * <h3>A Rest Controller to manage Addresses with CRUD Operations</h3>
@@ -33,7 +32,7 @@ import org.slf4j.LoggerFactory;
  */
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/")
+@RequestMapping("/Cities")
 public class CityController {
 
     private static final Logger logger = LoggerFactory.getLogger(AddressBookApplication.class);
@@ -53,17 +52,15 @@ public class CityController {
      * @see GetMapping
      * @see CityService
      */
-    @GetMapping("/City/loading")
+    @GetMapping("/loading")
     protected void loading() {
+        logger.info("Loading CSV File..");
 	    cityService.loading();
     }
     
-    @GetMapping("/City")
-    protected List<FindCitiesByZipCodeDto> findCitiesByZipCode(
-        @RequestParam(value = "zipCode", required = true) String zipCode
-    ) {
-        logger.info("ZipCode:" + zipCode);
-        List<FindCitiesByZipCodeDto> toto = cityService.findCitiesByZipCode(zipCode);
-        return toto;
+    @GetMapping("/")
+    protected List<SearchCitiesByZipCodeDto> findCitiesByZipCode( @RequestParam(value = "zipCode", required = true) String zipCode ) {
+        logger.info("Finding cities related to this zip code: " + zipCode);
+        return cityService.findCitiesByZipCode(zipCode);
     }
 }

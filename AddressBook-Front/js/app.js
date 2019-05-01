@@ -1,8 +1,8 @@
 const loader = document.getElementById('loader');
 const notif = document.getElementById('notif');
-const url = "http://localhost:8082/City/loading/";
+const url = "http://localhost:8082/Cities/loading/";
 const spin = document.getElementById('spin');
-const url_post = "http://localhost:8082/Address/";
+const url_post = "http://localhost:8082/Addresses/";
 const postAddress = document.getElementById('postAddress');
 
 let successMsgPost =  document.createElement("span");
@@ -26,24 +26,15 @@ loader.onclick = () => {
     client.onload = function (data) {
     
         if (client.readyState == 4 && client.status == "200") {
-            console.table(client);
-            console.log("Adresses Loaded");
             notif.removeChild(loadingSpinner);
             notif.append(successMsg);
             notif.classList.add("is-success");
             notif.append(closeBtn);
-
-        }
-        
-        else {
-            console.error(data);
-            console.log("message: " + client.status);
+        } else {
             errorMsg.innerText = "Error N°" + client.status + ": " + client.responseText;
             notif.append(errorMsg);
             notif.classList.add("is-danger");
             notif.append(deleteBtn);
-
-             
         }
       }
     
