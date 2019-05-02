@@ -22,9 +22,13 @@ public class AddressBookApplication {
 	}
 
 	@Bean
-	public ModelMapper mapper() { 
-		ModelMapper mapper = new ModelMapper(); 
-	mapper.getConfiguration().setFieldMatchingEnabled(true).setFieldAccessLevel(AccessLevel.PRIVATE).setMatchingStrategy(MatchingStrategies.STRICT);
-	return mapper;}
+    public ModelMapper mapper() {
+	ModelMapper mapper = new ModelMapper();
+	mapper.getConfiguration().setFieldMatchingEnabled(true)
+		.setFieldAccessLevel(AccessLevel.PRIVATE)
+		.setMatchingStrategy(MatchingStrategies.STRICT);
+	return mapper;
+	}
+	
 
 }
