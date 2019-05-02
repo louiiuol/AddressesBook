@@ -58,7 +58,7 @@ public class CityController {
 	    cityService.loading();
     }
     
-    @GetMapping("/")
+    @GetMapping
     protected List<SearchCitiesByZipCodeDto> findCitiesByZipCode( @RequestParam(value = "zipCode", required = true) String zipCode ) {
         logger.info("Finding cities related to this zip code: " + zipCode);
         return cityService.findCitiesByZipCode(zipCode);
