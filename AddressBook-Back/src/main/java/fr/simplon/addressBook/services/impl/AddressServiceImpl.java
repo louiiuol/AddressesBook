@@ -25,7 +25,8 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public void createAddress(CreateAddressDto addressDto) {
-        addressRepository.save(mapper.map(addressDto, Address.class));
+        Address map = mapper.map(addressDto, Address.class);
+        addressRepository.save(map);
         logger.info("Address saved: " + addressDto);
     }
 }

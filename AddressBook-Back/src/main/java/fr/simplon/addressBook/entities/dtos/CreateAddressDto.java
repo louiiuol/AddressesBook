@@ -19,6 +19,7 @@ public class CreateAddressDto {
 
     private String distribService;
 
+    @NotNull
     private Long cityId;
 
     @NotNull

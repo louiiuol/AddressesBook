@@ -43,109 +43,101 @@
           </div>
       </div>
     </nav>
-      <section class="hero">
-          <div class="hero-body">
-              <div class="container">
-              <h1 class="title">
-                  Create a new Address ! 
-              </h1>
-              <hr>
-              <h2 class="subtitle">
-                  Fill the form below to add a new Address.
-              </h2>
-              
-              </div>
-          </div>
-      </section>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+            <h1 class="title">
+                Create a new Address ! 
+            </h1>
+            <hr>
+            <h2 class="subtitle">
+                Fill the form below to add a new Address.
+            </h2>
+            
+            </div>
+        </div>
+    </section>
 
 
   
-  <div class="misepage">
-      <div class="control">
-              <h6> Form </h6>
-              <label class="radio">
-                <input type="radio" name="answer">
-                Individual
-              </label>
-              <label class="radio">
-                <input type="radio" name="answer">
-                Corporate
-              </label>
-      </div>
-        <br>
-        <br>
+  
 
-      <section class="form-address">
-          <div class="field">
-              <label class="label">Addressee</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="titre, nom et prénom">
-                <p class="help is-danger">
-                  This field is required
-                </p>
-              </div>
-            </div>
-            <div class="field">
-              <label class="label">Delivery point</label>
-              <div class="control">
-                <input class="input" type="text" placeholder=" letter box, floors">
-              </div>
-              
-            </div>
-            <div class="field">
-              <label class="label">Complementary</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Batiment">
-              </div>
-              
-            </div>
-            <div class="field">
-              <label class="label">Street</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Alley, avenue...">
-                <p class="help is-danger">
-                  This field is required
-                </p>
-              </div>
-              
-            </div>
-            <div class="field">
-              <label class="label">Distribution service</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Text input">
+      <form action="#" class="form-address" onsubmit="return false;">
 
-              </div>
-              
+        <div class="field">
+          <div class="control">
+            <label class="label">Choose your profile</label>
+            <div class="select">
+              <select id="isProfessional" required> 
+                <option value="true">Professional</option>
+                <option value="false">Individual</option>
+              </select>
             </div>
-            <div class="field">
-              <label class="label">Zipcode</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="75000">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Addressee</label>
+          <div class="control">
+            <input id="addressee" class="input" type="text" placeholder="titre, nom et prénom" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Delivery point</label>
+          <div class="control">
+            <input id="deliveryPoint" class="input" type="text" placeholder=" letter box, floors">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Complementary</label>
+          <div class="control">
+            <input id="complementary" class="input" type="text" placeholder="Batiment">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Street</label>
+          <div class="control">
+            <input  id="street" class="input" type="text" placeholder="Alley, avenue..." required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Distribution service</label>
+          <div class="control">
+            <input id="distribService" class="input" type="text" placeholder="Text input">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Zipcode</label>
+          <div class="control">
+            <input id="zipCode"class="input" type="number" placeholder="75000">
+          </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+              <label class="label">Locality</label>
+              <div class="select">
+                <select id="cityId" required> 
+                  <option value="1">Paris</option>
+                  <option value="2">Marseille</option>
+                </select>
               </div>
-              <p class="help is-danger">
-                  This field is required
-                </p>
             </div>
-            <div class="field">
-                  <label class="label">Locality</label>
-                  <div class="control">
-                    <input class="input" type="text" placeholder="Paris">
-                  </div>
-                  <p class="help is-danger">
-                      This field is required
-                    </p>
-                </div>
+          </div>
 
-                <button class="button is-link" id="postAddress">Submit</button>
-                
-                <div id="notif" class="notification">
-                  <i class="fas fa-spinner fa-pulse"></i>
-                    <button class="delete"></button>   
-              </div>
+        <button type="submit" class="button is-link" onclick="createAddress()">Submit</button>
+        
+        <div id="notif" class="notification">
+          <i class="fas fa-spinner fa-pulse"></i>
+            <button class="delete"></button>   
+        </div>
 
-
-      </section>
-  </div>
+      </form>
 
       <nav class="footer">
           <p>Website made with  <i class="fas fa-heart"></i>  by Simplon</p>

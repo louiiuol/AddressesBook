@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,7 +53,7 @@ public class CityController {
      * @see GetMapping
      * @see CityService
      */
-    @GetMapping("/loading")
+    @PostMapping("/loading")
     protected void loading() {
         logger.info("Loading CSV File..");
 	    cityService.loading();
