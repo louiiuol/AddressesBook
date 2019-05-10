@@ -96,7 +96,7 @@ public class CityServiceImpl implements CityService {
 
     @Override
     public Page<City> getCitiesPagination(Integer page) {
-	Pageable pages = PageRequest.of(page, 1);
+	Pageable pages = PageRequest.of(page, 20);
 	Page<City> Listpages = repoCity.findAll(pages);
 	return Listpages ;
     }
