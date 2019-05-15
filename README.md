@@ -92,7 +92,7 @@ git status
 git add . 
 git commit 
 ```
-
+##
 ```
 > " CONFLICT (content): Merge conflict in file.extension " 
 ```
