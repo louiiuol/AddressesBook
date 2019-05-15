@@ -1,17 +1,14 @@
-# Addresses Book
+# Addresses Book [![Awesome]
+
 <img src="https://image.flaticon.com/icons/svg/148/148988.svg" title="AddressesBook" alt="AddressesBook" align="right" width="128">
 
 ### An application to manage your Addresses by: 
-### * Import a CSV File 
-### * Posting an Address with a form
-### * Manage stored addresses
-### * More features coming soon ...
-
-
-###### See deployment for notes on how to deploy the project on a live system.
+###  Import a CSV File 
+###  Posting an Address with a form
+###  Manage stored addresses
+###  More features coming soon ...
 
 ## Built With
-
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Spring](https://spring.io/) - Java Framework
 * [Bulma](https://bulma.io/documentation/) - CSS Framework
@@ -20,7 +17,7 @@
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+> These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 ### Prerequisites
 ```
 Maven (Optional)
@@ -51,9 +48,8 @@ open index.html (depending on your favorite way to open html files)
 ```
 cd ./yourWorkspace/
 git cone https://github.com/louiiuol/AddressesBook.git
- 
 ```
-> You can now start working on the project, implementing functionnalities, fixing bugs and such ...
+###### You can now start working on the project, implementing functionnalities, fixing bugs and such ...
 
 ### WHEN you contributing to the project
 > Every new functionnality implemented, check if the project is stable, 
@@ -62,13 +58,9 @@ git cone https://github.com/louiiuol/AddressesBook.git
 git add . // Only if you have configure your .gitignore (otherwise: git add path/yourfile.extension)
 git commit -m "#id - Short and precise description of functionnality"
 ```
-> You can also do it in one line (Only if you have configure your .gitignore)
-```
-git commit -am "#id - Short and precise description of functionnality"
-```
 
 ### WHEN you have and commit changes, you can compare repositories and deploy them:
-> Update your knowledge of distant repository (commits, branches etc..)
+> Update your knowledge of the distant repository informations (commits, branches etc..)
 ```
 git fetch
 ```
@@ -93,7 +85,7 @@ git status
 ```
 ###### Depending on the result of the command ```git status``` above, following commands are required: 
 > " Automatic merge made with success "
-##### Your commits are published !
+###### Your commits are published !
 
 > " CONFLICT (content): Merge conflict in file.extension " 
 
@@ -103,7 +95,7 @@ open file.extension
 ```
 ### Example of merging issue in editor: 
 > The HEAD part represent the text from your local repository
-> The other part, after the ======= separation, represent the text on your distant respository
+> The other part, after the ======= separation, represent the text on the distant respository
 ```
 <<<<<<< HEAD
 
@@ -124,13 +116,13 @@ This is the text i want to keep
 ```
 > Save your file 
 
-##### you can certify that your changes works as follow:(Only if you have configure your .gitignore)
+##### you can now certify that your changes works as follow:(Only if you have configure your .gitignore)
 ```
-git commit -am "#id - FIX_MERGE - Short and precise description of issue fixed"
+git add . 
+git commit 
 ```
 
-
-### WHEN start a new GIT issue
+### WHEN you start a new GIT issue
 > Create your branch
 ```
 git branch #id-branchName
