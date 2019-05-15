@@ -1,105 +1,151 @@
 # Addresses Book
-<img src="https://image.flaticon.com/icons/svg/148/148988.svg" title="AddressesBook" alt="AddressesBook" align="right" width="64">
+<img src="https://image.flaticon.com/icons/svg/148/148988.svg" title="AddressesBook" alt="AddressesBook" align="right" width="128">
 
-An application to manage your Addresses by: 
-* Import a CSV File 
-* Posting an Address with a form
-* More features coming soon ...
+### An application to manage your Addresses by: 
+### * Import a CSV File 
+### * Posting an Address with a form
+### * Manage stored addresses
+### * More features coming soon ...
 
-## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+###### See deployment for notes on how to deploy the project on a live system.
 
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Spring](https://spring.io/) - Java Framework
 * [Bulma](https://bulma.io/documentation/) - CSS Framework
-* [Vanilla JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [JPA Hibernate](https://hibernate.org/orm/documentation/5.4/) - Database persistence
+* [Vanilla JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - No external Framework JS
 
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 ### Prerequisites
-
-What things you need to install the software and how to install them
-
 ```
-Maven
-Spring
-SQL Workbench
-JDK 1.8 
+Maven (Optional)
+SQL Workbench (or equivalent)
+IDEA configured with : 
+  - Maven
+  - Spring
+JDK 1.8 (min)
+Your favorite internet browser
 ```
 
 ### Installing
-
-A step by step series that tell you how to get the development env running
-
 ```
 cd ./yourWorkspace/
 git cone https://github.com/louiiuol/AddressesBook.git
 cd AddressesBook
 mvn update
 mvn spring-boot:run
+cd AddressesBook/AddressBook-Front/
+open index.html (depending on your favorite way to open html files)
 ```
 
-## Running the tests
+## Versioning (How To Git) 
+> Follow steps in the following order
 
-Tests are not implemented yet!
-
-
-
-## Versioning (How To Git)
-
-### First time working on the project
-#### Clone project in your workspace
+### WHEN it is the first loading of the project
+> Clone project in your workspace
 ```
 cd ./yourWorkspace/
 git cone https://github.com/louiiuol/AddressesBook.git
+ 
 ```
-###### You can now start working on the project, implementing functionnalities.. 
+> You can now start working on the project, implementing functionnalities, fixing bugs and such ...
 
-### Every time you add a new functionnality, and the project is stable, you can certify your changes work as follow:
+### WHEN you contributing to the project
+> Every new functionnality implemented, check if the project is stable, 
+> then you can certify that your changes works as follow:
 ```
-git add . // Only if you have configure your .gitignore
-or
-git add path/yourfile.extension
-```
-
-#### Once you add all the files you wish to publish 
-```
+git add . // Only if you have configure your .gitignore (otherwise: git add path/yourfile.extension)
 git commit -m "#id - Short and precise description of functionnality"
 ```
-#### You can also do it in one line (Only if you have configure your .gitignore)
+> You can also do it in one line (Only if you have configure your .gitignore)
 ```
 git commit -am "#id - Short and precise description of functionnality"
 ```
 
-### Once you have made changes to the project and commit them, you can start to deploy your changes:
-#### Update your knowledge of distant repository (commits, branch etc..)
+### WHEN you have and commit changes, you can compare repositories and deploy them:
+> Update your knowledge of distant repository (commits, branches etc..)
 ```
 git fetch
 ```
-#### Show differences between your local repository and the distant one 
+> Show differences between your local repository and the distant one 
 ```
 git status
 ```
-
-### Depending on the result of the cmd git status above, following commands are required: 
-#### Your branch is ahead from * commits to master
+###### Depending on the result of the command ```git status``` above, following commands are required: 
+> " Your branch is ahead from * commits to master "
 ```
 git push
 ```
-#### Your branch is behind from * commits to master
+> " Your branch is behind from * commits to master "
 ```
 git pull
 ```
-#### Your branch and master have diverged
+
+> " Your branch and 'origin/master' have diverged,and have * and * different commits each, respectively. "
 ```
-git commit -am "#id - Short and precise description of functionnality" // Only if you have configure your .gitignore
 git pull
 git status
 ```
+###### Depending on the result of the command ```git status``` above, following commands are required: 
+> " Automatic merge made with success "
+##### Your commits are published !
 
-### Depending on the result of the cmd git status above, following commands are required: 
+> " CONFLICT (content): Merge conflict in file.extension " 
 
+```
+cd pathToFile/
+open file.extension
+```
+### Example of merging issue in editor: 
+> The HEAD part represent the text from your local repository
+> The other part, after the ======= separation, represent the text on your distant respository
+```
+<<<<<<< HEAD
+
+This Text shouldnt be here, it's my cat who wrote that, i swear !!
+
+=======
+## HEADLINE
+
+This is the text i want to keep 
+
+>>>>>>> 343734534635
+```
+> Simply choose wich part you want to keep, and delete the other, as follow: 
+```
+## HEADLINE
+
+This is the text i want to keep 
+```
+> Save your file 
+
+##### you can certify that your changes works as follow:(Only if you have configure your .gitignore)
+```
+git commit -am "#id - FIX_MERGE - Short and precise description of issue fixed"
+```
+
+
+### WHEN start a new GIT issue
+> Create your branch
+```
+git branch #id-branchName
+git checkout branchName (may be optional)
+```
+> Once your changes are certified on your branch (as above), u can merge them 
+```
+git checkout master 
+git merge #id-branchName
+```
+> Clean your repository from useless branch
+```
+git branch // List all branch 
+git branch -d branchName
+```
 
 ## Authors
 
