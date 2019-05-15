@@ -68,7 +68,7 @@ git fetch
 ```
 git status
 ```
-###### Depending on the result of the command ```git status``` above, following commands are required: 
+#### Depending on the result of the command ```git status``` above, following commands are required: 
 > " Your branch is ahead from * commits to master "
 ```
 git push
@@ -77,13 +77,14 @@ git push
 ```
 git pull
 ```
-
+##
 > " Your branch and 'origin/master' have diverged,and have * and * different commits each, respectively. "
 ```
 git pull
 git status
 ```
-###### Depending on the result of the command ```git status``` above, following commands are required: 
+#### Depending on the result of the command ```git status``` above, following commands are required: 
+##
 ```
 > " Automatic merge made with success "
 ```
