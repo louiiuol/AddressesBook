@@ -51,7 +51,7 @@ git cone https://github.com/louiiuol/AddressesBook.git
 ```
 ###### You can now start working on the project, implementing functionnalities, fixing bugs and such ...
 
-### WHEN you contributing to the project
+### WHEN you contributing to the project (alone)
 > Every new functionnality implemented, check if the project is stable, 
 > then you can certify that your changes works as follow:
 ```
@@ -59,7 +59,7 @@ git add . // Only if you have configure your .gitignore (otherwise: git add path
 git commit -m "#id - Short and precise description of functionnality"
 ```
 
-### WHEN you have and commit changes, you can compare repositories and deploy them:
+### WHEN you want to publish your changes:
 > Update your knowledge of the distant repository informations (commits, branches etc..)
 ```
 git fetch
@@ -84,14 +84,24 @@ git pull
 git status
 ```
 ###### Depending on the result of the command ```git status``` above, following commands are required: 
+```
 > " Automatic merge made with success "
-###### Your commits are published !
-
-> " CONFLICT (content): Merge conflict in file.extension " 
+```
+###### Your commits are published, you can now certify that your changes works as follow:(Only if you have configure your .gitignore)
+```
+git add . 
+git commit 
+```
 
 ```
-cd pathToFile/
-open file.extension
+> " CONFLICT (content): Merge conflict in file.extension " 
+```
+###### You need to fix merging issues on the(s) file(s)
+
+### WHEN you want to fix merging issues
+```
+cd pathToFileWithMerginIssue/
+open FileWithMerginIssue.extension
 ```
 ### Example of merging issue in editor: 
 > The HEAD part represent the text from your local repository
