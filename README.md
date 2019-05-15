@@ -78,7 +78,7 @@ git push
 git pull
 ```
 ##
-> " Your branch and 'origin/master' have diverged,and have * and * different commits each, respectively. "
+> " **_Your branch and 'origin/master' have diverged,and have * and * different commits each, respectively._** "
 ```
 git pull
 git status
