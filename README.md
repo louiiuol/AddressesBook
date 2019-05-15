@@ -1,5 +1,5 @@
 # Addresses Book
-<img src="https://image.flaticon.com/icons/svg/148/148988.svg" title="AddressesBook" alt="AddressesBook" align="right">
+<img src="https://image.flaticon.com/icons/svg/148/148988.svg" title="AddressesBook" alt="AddressesBook" align="right" width="64">
 
 An application to manage your Addresses by: 
 * Import a CSV File 
