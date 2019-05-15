@@ -1,5 +1,5 @@
 # Addresses Book
-<img src="https://www.bishop.edu/wp-content/uploads/2018/06/Calendar-web-banner.jpg" title="AddressesBook" alt="AddressesBook">
+<img src="https://image.flaticon.com/icons/svg/148/148988.svg" title="AddressesBook" alt="AddressesBook" align="right">
 
 An application to manage your Addresses by: 
 * Import a CSV File 
@@ -9,6 +9,13 @@ An application to manage your Addresses by:
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+## Built With
+
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [Spring](https://spring.io/) - Java Framework
+* [Bulma](https://bulma.io/documentation/) - CSS Framework
+* [Vanilla JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ### Prerequisites
 
@@ -35,18 +42,9 @@ mvn spring-boot:run
 
 ## Running the tests
 
-Tests are not implemented yet! 
+Tests are not implemented yet!
 
-## Built With
 
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [Spring](https://spring.io/) - Java Framework
-* [Bulma](https://bulma.io/documentation/) - CSS Framework
-* [Vanilla JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/louiiuol/f1ca9436c877c85f39f20e683ed64156) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning (How To Git)
 
@@ -63,10 +61,14 @@ git cone https://github.com/louiiuol/AddressesBook.git
 git add . // Only if you have configure your .gitignore
 or
 git add path/yourfile.extension
-then
-git commit -m "#id - Short and precise description of functionnality"
+```
 
-or (faster) // Only if you have configure your .gitignore
+#### Once you add all the files you wish to publish 
+```
+git commit -m "#id - Short and precise description of functionnality"
+```
+#### You can also do it in one line (Only if you have configure your .gitignore)
+```
 git commit -am "#id - Short and precise description of functionnality"
 ```
 
@@ -112,3 +114,7 @@ git status
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/louiiuol/f1ca9436c877c85f39f20e683ed64156) for details on our code of conduct, and the process for submitting pull requests to us.
