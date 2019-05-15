@@ -43,14 +43,14 @@ open index.html (depending on your favorite way to open html files)
 ## Versioning (How To Git) 
 > Follow steps in the following order
 
-### WHEN it is the first loading of the project
+### WHEN you get the project from github
 > Clone project in your workspace
 ```
 cd ./yourWorkspace/
 git cone https://github.com/louiiuol/AddressesBook.git
 ```
 ###### You can now start working on the project, implementing functionnalities, fixing bugs and such ...
-
+##
 ### WHEN you contributing to the project (alone)
 > Every new functionnality implemented, check if the project is stable, 
 > then you can certify that your changes works as follow:
@@ -58,7 +58,7 @@ git cone https://github.com/louiiuol/AddressesBook.git
 git add . // Only if you have configure your .gitignore (otherwise: git add path/yourfile.extension)
 git commit -m "#id - Short and precise description of functionnality"
 ```
-
+##
 ### WHEN you want to publish your changes:
 > Update your knowledge of the distant repository informations (commits, branches etc..)
 ```
@@ -98,7 +98,7 @@ git commit
 > " CONFLICT (content): Merge conflict in file.extension " 
 ```
 ###### You need to fix merging issues on the(s) file(s)
-
+##
 ### WHEN you want to fix merging issues
 ```
 cd pathToFileWithMerginIssue/
@@ -127,7 +127,7 @@ This is the text i want to keep
 git add . 
 git commit 
 ```
-
+##
 ### WHEN you start a new GIT issue
 > Create your branch
 ```
