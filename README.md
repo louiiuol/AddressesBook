@@ -41,7 +41,6 @@ open index.html (depending on your favorite way to open html files)
 ```
 
 ## Versioning (How To Git) 
-> Follow steps in the following order
 
 ### WHEN you get the project from github
 > Clone project in your workspace
@@ -97,7 +96,7 @@ git commit
 ```
 > " CONFLICT (content): Merge conflict in file.extension " 
 ```
-###### You need to fix merging issues on the(s) file(s)
+###### You need to fix merging issues on the(s) file(s) (follow steps below)
 ##
 ### WHEN you want to fix merging issues
 ```
