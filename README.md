@@ -103,25 +103,20 @@ git commit
 cd pathToFileWithMerginIssue/
 open FileWithMerginIssue.extension
 ```
-### Example of merging issue in editor: 
+#### Example of merging issue in editor: 
 > The HEAD part represent the text from your local repository
 > The other part, after the ======= separation, represent the text on the distant respository
 ```
 <<<<<<< HEAD
-
 This Text shouldnt be here, it's my cat who wrote that, i swear !!
-
 =======
 ## HEADLINE
-
 This is the text i want to keep 
-
 >>>>>>> 343734534635
 ```
 > Simply choose wich part you want to keep, and delete the other, as follow: 
 ```
 ## HEADLINE
-
 This is the text i want to keep 
 ```
 > Save your file 
