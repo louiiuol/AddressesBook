@@ -3,10 +3,10 @@
 <img src="https://image.flaticon.com/icons/svg/148/148988.svg" title="AddressesBook" alt="AddressesBook" align="right" width="128">
 
 ### An application to manage your Addresses by: 
-###  Import a CSV File 
-###  Posting an Address with a form
-###  Manage stored addresses
-###  More features coming soon ...
+####  Import a CSV File 
+####  Posting an Address with a form
+####  Manage stored addresses
+####  More features coming soon ...
 
 ## Built With
 * [Maven](https://maven.apache.org/) - Dependency Management
@@ -55,8 +55,8 @@ open index.html (depending on your favorite way to open html files)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+> This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/louiiuol/f1ca9436c877c85f39f20e683ed64156) for details on our code of conduct, and the process for submitting pull requests to us.
+> Please read [CONTRIBUTING.md](https://gist.github.com/louiiuol/f1ca9436c877c85f39f20e683ed64156) for details on our code of conduct,  and the process for submitting pull requests to us.
