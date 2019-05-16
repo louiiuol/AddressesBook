@@ -41,7 +41,7 @@ open index.html (depending on your favorite way to open html files)
 ```
 
 ## Versioning (How To Git) 
-> Please check the [How to Git]() file for detailed git commands
+> Please check the [How to Git](https://gist.github.com/louiiuol/2697f8217853689fef9173e4eaad5386#versioning-how-to-git) file for detailed git commands
 
 ## Authors
 
