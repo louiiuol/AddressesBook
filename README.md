@@ -62,41 +62,33 @@ git commit -m "#id - Short and precise description of functionnality"
 > Update your knowledge of the distant repository informations (commits, branches etc..)
 ```
 git fetch
-```
-> Show differences between your local repository and the distant one 
-```
 git status
+git diff (optional)
 ```
 #### Depending on the result of the command ```git status``` above, following commands are required: 
-> " Your branch is ahead from * commits to master "
+
 ```
-git push
+> " Your branch is ahead from * commits to master "   =>  git push
+> " Your branch is behind from * commits to master "  =>  git pull
 ```
-> " Your branch is behind from * commits to master "
+#### If your branches have diverged
+
 ```
-git pull
-```
-##
 > " **_Your branch and 'origin/master' have diverged,and have * and * different commits each, respectively._** "
+=>  git pull
+=>  git status
 ```
-git pull
-git status
+##### Depending on the result of the command ```git status``` above, following commands are required: 
 ```
-#### Depending on the result of the command ```git status``` above, following commands are required: 
-##
-```
-> " Automatic merge made with success "
-```
-###### Your commits are published, you can now certify that your changes works as follow:(Only if you have configure your .gitignore)
-```
-git add . 
-git commit 
+> " Automatic merge made with success " (Your commits are published)
+=> git add . (Only if you have configure your .gitignore)
+=> git commit 
 ```
 ##
 ```
 > " CONFLICT (content): Merge conflict in file.extension " 
+=> You need to fix merging issues on the(s) file(s) (follow steps below) 
 ```
-###### You need to fix merging issues on the(s) file(s) (follow steps below)
 ##
 ### WHEN you want to fix merging issues
 ```
